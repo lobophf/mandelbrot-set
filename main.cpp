@@ -1,50 +1,33 @@
 #include<iostream>
 
-class Animal{
-public:
-	virtual void run() = 0;
-	virtual void speak() = 0;
-
+struct Test{
+	virtual bool operator()(std::string &text) = 0;
+	virtual ~Test(){};
 };
 
-class Dog: public Animal{
-public:
-	void speak(){
-		std::cout << "Wolf" << std::endl;
+struct MatchTest: public Test{
+	bool operator()(std::string &text){
+		return text == "lion";
 	}
-
 };
 
-class Labrador: public Dog{
-public: 
-	Labrador(){
-		std::cout << "new labrador" << std::endl;
+void check(std::string text, Test &test){
+	if(test(text)){
+		std::cout << "Text match." << std::endl;
 	}
-	
-	void run(){
-		std::cout << "Running" << std::endl;
+	else{
+		std::cout << "No match." << std::endl;
 	}
-
-};
-
-void test(Animal &a){
-	a.speak();
 }
 
 int main(){
-
-
-	Labrador labs[5];
-
-	Labrador lab;
-	lab.run();
-	lab.speak();
 	
-	Animal *animals[5];
-	animals[0] = &lab;	
-	lab.run();
+	MatchTest pred;	
+	std::string value = "lion";
 	
-	test(lab);
+	//std::cout << pred(value) << std::endl;
+	MatchTest m;
+	check("lon", m);
 
 	return 0;
 }
