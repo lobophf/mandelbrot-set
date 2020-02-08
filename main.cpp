@@ -1,45 +1,50 @@
 #include<iostream>
 
-class Parent{
-private:
-	int one;
-
+class Animal{
 public:
-	
-	Parent():one(0){};
-	
-	Parent(const Parent &other){
-		std::cout << "copy parent" << std::endl;
-	}
+	virtual void run() = 0;
+	virtual void speak() = 0;
 
-	virtual void print(){
-		std::cout << "parent" << std::endl;
-	}
-
-	virtual ~Parent(){};
 };
 
-class Child: public Parent{
-private:
-	int two;
+class Dog: public Animal{
 public:
-	Child():two(0){
+	void speak(){
+		std::cout << "Wolf" << std::endl;
+	}
 
-	}
-	void print(){
-		std::cout << "child" << std::endl;
-	}
 };
+
+class Labrador: public Dog{
+public: 
+	Labrador(){
+		std::cout << "new labrador" << std::endl;
+	}
+	
+	void run(){
+		std::cout << "Running" << std::endl;
+	}
+
+};
+
+void test(Animal &a){
+	a.speak();
+}
 
 int main(){
 
-	Child c1;
-	Parent &p1 = c1;
+
+	Labrador labs[5];
+
+	Labrador lab;
+	lab.run();
+	lab.speak();
 	
-	p1.print();
+	Animal *animals[5];
+	animals[0] = &lab;	
+	lab.run();
 	
-	Parent p2 = Child();
-	p2.print();
+	test(lab);
 
 	return 0;
 }
