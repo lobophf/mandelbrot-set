@@ -1,37 +1,45 @@
 #include<iostream>
-#include<algorithm>
-#include<vector>
 
-bool match(std::string test){
+class Parent{
+private:
+	int one;
+
+public:
 	
-	return test.size() == 3;
-}
-
-int countString(std::vector<std::string> &texts, bool (*match)(std::string test) ){
-	int tally = 0;
-	for(int i = 0; i < texts.size(); i++){
-		if(match(texts[i])){
-			tally++;
-		}
+	Parent():one(0){};
+	
+	Parent(const Parent &other){
+		std::cout << "copy parent" << std::endl;
 	}
-	return tally;
-}
 
+	virtual void print(){
+		std::cout << "parent" << std::endl;
+	}
+
+	virtual ~Parent(){};
+};
+
+class Child: public Parent{
+private:
+	int two;
+public:
+	Child():two(0){
+
+	}
+	void print(){
+		std::cout << "child" << std::endl;
+	}
+};
 
 int main(){
 
-	std::vector<std::string> texts;
-	texts.push_back("one");
-	texts.push_back("two");
-	texts.push_back("three");
-	texts.push_back("four");
-	texts.push_back("two");
-	texts.push_back("three");
+	Child c1;
+	Parent &p1 = c1;
 	
-	std::cout << match("one") << std::endl;
+	p1.print();
 	
-	std::cout << std::count_if(texts.begin(), texts.end(), match) << std::endl;
+	Parent p2 = Child();
+	p2.print();
 
-	std::cout << countString(texts, match) << std::endl;
 	return 0;
 }
