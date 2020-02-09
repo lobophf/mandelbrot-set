@@ -1,40 +1,33 @@
 #include<iostream>
-#include<typeinfo>
-
-auto test() -> int{
-
-	return 8;
-}
-
-template<class T> 
-auto test1(T value) -> decltype(value){	
-	return value;
-}
-
-template<class T, class S>
-auto test2(T value1, S value2) -> decltype(value1 + value2){
-	return value1 + value2;
-}
-
-int get(){
-	return 99;
-}
-
-auto test3() -> decltype(get()){
-	return get();
-}
+#include<vector>
 
 int main(){
+	
+	std::string texts[] = {"one", "two", "three"};
 
-	auto value = 9;
-	std::cout << value << std::endl;
+	for(auto i: texts){
+		std::cout << i << std::endl;
+	}
+	
+	std::cout << std::endl;
 
-	std::cout << test1(87) << std::endl;
-	std::cout << test2(1, 6) << std::endl;
+	std::vector<int> numbers;
+	numbers.push_back(3);
+	numbers.push_back(8);
+	numbers.push_back(11);
+	numbers.push_back(2);
 
-	std::cout << typeid(test2(7, 4)).name() << std::endl;
+	for(auto n: numbers){
+		std::cout << n << std::endl;
+	}
+	
+	std::cout << std::endl;
 
-	std::cout << test3() << std::endl;
+	std::string myString = "hello";
+
+	for(auto c: myString){
+		std::cout << c << std::endl;
+	}
 
 	return 0;
 }
