@@ -1,33 +1,26 @@
 #include<iostream>
+#include<typeinfo>
 
-struct Test{
-	virtual bool operator()(std::string &text) = 0;
-	virtual ~Test(){};
+class myClass{
+public:
+	myClass(){}
+	~myClass(){}
 };
-
-struct MatchTest: public Test{
-	bool operator()(std::string &text){
-		return text == "lion";
-	}
-};
-
-void check(std::string text, Test &test){
-	if(test(text)){
-		std::cout << "Text match." << std::endl;
-	}
-	else{
-		std::cout << "No match." << std::endl;
-	}
-}
 
 int main(){
 	
-	MatchTest pred;	
-	std::string value = "lion";
+	double i;
 	
-	//std::cout << pred(value) << std::endl;
-	MatchTest m;
-	check("lon", m);
+	std::cout << typeid(i).name() << std::endl;
+
+	std::string myString;
+	std::cout << typeid(myString).name() << std::endl;
+
+	char myChar;
+	std::cout << typeid(myChar).name() << std::endl;
+
+	myClass p;
+	std::cout << typeid(p).name() << std::endl;
 
 	return 0;
 }
