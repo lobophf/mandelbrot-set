@@ -19,14 +19,20 @@ public:
 	void add(T value);
 	T &get(int pos);
 
-	iterator begin(){
-		return iterator(0, *this);
-	}
-
-	iterator end(){
-		return iterator(m_size, *this);
-	}
+	iterator begin();
+	iterator end();
 };
+
+template<typename T>
+typename ring<T>::iterator ring<T>::begin(){
+	return iterator(0, *this);
+}
+
+template<typename T>
+typename ring<T>::iterator ring<T>::end(){
+	return iterator(m_size, *this);
+}
+
 
 template<typename T>
 ring<T>::ring(int size){ 
