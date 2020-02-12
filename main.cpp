@@ -1,25 +1,32 @@
 #include <iostream>
-#include <initializer_list>
 
 class Test{
+private:
+	int id{2};
+	std::string name{"Mike"};
 public:
-	Test(std::initializer_list<std::string> texts){
-		for(auto value: texts){
-			std::cout << value << std::endl;
-		}
+	Test() = default;
+//	Test(const Test &other) = delete;
+	Test &operator=(const Test &other) = default;
+	Test(int id) : id(id){
+
 	}
 
-	void print(std::initializer_list<std::string> texts){
-		for(auto value: texts){
-			std::cout << value << std::endl;
-		}
+	void print(){
+		std::cout << id << ": " << name << std::endl;
 	}
 };
 
 int main(){
 
-	Test test{"apple", "orange", "banana"};
-	test.print({"one", "two", "three", "four"});
+	Test test;
+	test.print();
+
+	Test test1(4);
+	test1.print();
+
+//	Test test2 = test1;
+
 
 	return 0;
 }
