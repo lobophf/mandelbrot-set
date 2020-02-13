@@ -1,34 +1,19 @@
 #include <iostream>
 
-void testGreet(void (*greet)(std::string)){
-	greet("Bob");
-}
-
-void runDivide(double (*divide)(double a, double b)){
-	double rval = divide(9, 2);
-	std::cout << rval << std::endl;
-}
-
 int main(){
 
-	auto pGreet = [](std::string name){std::cout << "hello " << std::endl;};
-	pGreet("Mike");
+	int one = 1;
+	int two = 2;
+	int three = 3;
 
-	testGreet(pGreet);
-
-	auto pDivide = [](double a, double b) -> double{
-
-		if(b == 0){
-			return 0;
-		}
-		return a/b;
-	};
-
-	std::cout << pDivide(10.0, 4.0) << std::endl;
-	std::cout << pDivide(10.0, 0.0) << std::endl;
-	
-	runDivide(pDivide);
-
+	[one, two](){std::cout << one << ", " << two << std::endl;}();
+	[=](){std::cout << one << ", " << two << std::endl;}();
+	[=, &three](){three = 9; std::cout << one << ", " << two << std::endl;}();
+	std::cout << one << ", " << two << ", " << three << std::endl;
+	[&](){three=21; two = 34; std::cout << one << ", " << two << std::endl;}();
+	std::cout << one << ", " << two << ", " << three << std::endl;
+	[&, two, three](){one = 100; std::cout << one << ", " << two << std::endl;}();
+	std::cout << one << std::endl;
 
 	return 0;
 }
