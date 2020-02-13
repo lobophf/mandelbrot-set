@@ -1,19 +1,31 @@
 #include <iostream>
 
+class Test{
+private:
+	int one{1};
+	int two{2};
+
+
+public:
+	void run(){
+		int three{3};
+		int four{4};
+
+		auto pLambda = [this, three, four](){
+			one = 111;
+			std::cout << one << std::endl;
+			std::cout << two << std::endl;
+			std::cout << three << std::endl;
+			std::cout << four << std::endl;
+		};
+		pLambda();
+	}
+};
+
 int main(){
 
-	int one = 1;
-	int two = 2;
-	int three = 3;
-
-	[one, two](){std::cout << one << ", " << two << std::endl;}();
-	[=](){std::cout << one << ", " << two << std::endl;}();
-	[=, &three](){three = 9; std::cout << one << ", " << two << std::endl;}();
-	std::cout << one << ", " << two << ", " << three << std::endl;
-	[&](){three=21; two = 34; std::cout << one << ", " << two << std::endl;}();
-	std::cout << one << ", " << two << ", " << three << std::endl;
-	[&, two, three](){one = 100; std::cout << one << ", " << two << std::endl;}();
-	std::cout << one << std::endl;
+	Test test;
+	test.run();
 
 	return 0;
 }
