@@ -18,9 +18,9 @@ public:
 	Test(int i){
 		std::cout << "parametrized constructor" << std::endl;
 
-		for(int i = 0; i < SIZE; i++){
-			_pBuffer[i] = 7 * i;
-		}
+//		for(int i = 0; i < SIZE; i++){
+//			_pBuffer[i] = 7 * i;
+//		}
 	}
 	
 	Test(const Test &other){
@@ -57,20 +57,11 @@ int main(){
 
 	std::vector<Test> vec;
 	vec.push_back(Test());
-
-	int value1 = 7;
 	
-	int *pValue1 = &value1;
-//	int *pValue2 = &7;
+	Test &rTest1 = test1;
+	const Test &rTest2 = getTest();
 
-	Test *pTest1 = &test1;
-//	Test *pTest2 = &getTest();
+	Test test2(Test(1)); //for some reason, previously I messed up
 
-	int *pValue3 = &++value1;
-	std::cout << *pValue3 << std::endl;
-	
-//	int *pValue4 = &value1++;	
-//	int *s = &(8 + value1);
-	
 	return 0;
 }
