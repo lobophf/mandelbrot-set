@@ -55,13 +55,22 @@ int main(){
 
 	Test test1 = getTest();
 
-	// !g++ -fno-elide-constructors main.cpp && ./a.out
-
-	std::cout << test1 << std::endl;
-
-
 	std::vector<Test> vec;
 	vec.push_back(Test());
 
+	int value1 = 7;
+	
+	int *pValue1 = &value1;
+//	int *pValue2 = &7;
+
+	Test *pTest1 = &test1;
+//	Test *pTest2 = &getTest();
+
+	int *pValue3 = &++value1;
+	std::cout << *pValue3 << std::endl;
+	
+//	int *pValue4 = &value1++;	
+//	int *s = &(8 + value1);
+	
 	return 0;
 }
