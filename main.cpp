@@ -1,27 +1,52 @@
-#include<iostream>
+#include <iostream>
+#include <vector>
 
-class Parent{
-	int dogs{5};
-	std::string text{"hello"};
+class Test{
 public:
-	Parent() : Parent("hello"){
-		std::cout << "no parameter parent construtor" << std::endl;
+	Test(){
+		std::cout << "constructor" << std::endl;
 	}
 
-	Parent(std::string text){
-		std::cout << "string parent constructor" << std::endl;
+	Test(int i){
+		std::cout << "parametrized constructor" << std::endl;
 	}
+	
+	Test(const Test &other){
+		std::cout << "copy constructor" << std::endl;
+	}
+
+	Test &operator=(const Test &other){
+		std::cout << "assigment" << std::endl;
+	}
+	
+	~Test(){
+		std::cout << "destructor" << std::endl;
+	}
+
+	friend std::ostream &operator<<(std::ostream &out, const Test &test);
 };
 
-class Child: public Parent{
-public:
-	Child() = default;
-};
+std::ostream &operator<<(std::ostream &out, const Test &test){
+	out << "Hello from test" << std::endl;
+	return out;
+}
+
+Test getTest(){
+	return Test();
+}
 
 int main(){
 
-	Parent parent("hello");
-	Child child;
+	Test test1 = getTest();
+
+	// !g++ -fno-elide-constructors main.cpp && ./a.out
+
+	std::cout << test1 << std::endl;
+
+
+	std::vector<Test> vec;
+	vec.push_back(Test());
+
 
 	return 0;
 }
