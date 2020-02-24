@@ -42,18 +42,8 @@ public:
 		_pBuffer = other._pBuffer;
 		other._pBuffer = nullptr;
 	}
-	
-	Test &operator=(Test &&other){
 
-		std::cout << "move assingment" << std::endl;
-
-		delete [] _pBuffer;
-		_pBuffer = other._pBuffer;
-		other._pBuffer = nullptr;
-		return *this;
-	}
 };
-
 std::ostream &operator<<(std::ostream &out, const Test &test){
 	return out;
 }
@@ -69,8 +59,9 @@ int main(){
 	std::vector<Test> vec;
 	vec.push_back(Test());
 
-	Test test = getTest();
-	test = getTest();
+
+
 
 	return 0;
 }
+
