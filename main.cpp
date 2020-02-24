@@ -1,66 +1,42 @@
+//============================================================================
+// Name        : Static.cpp
+// Author      : 
+// Version     :
+// Copyright   : Your copyright notice
+// Description : Hello World in C++, Ansi-style
+//============================================================================
+
 #include <iostream>
-#include <memory.h>
-#include <vector>
+using namespace std;
 
-class Test{
-private:
-	static const int SIZE=100;
-	int *_pBuffer{nullptr};
-
+class Parent {
 public:
-	Test(){
-		_pBuffer = new int[SIZE];
-		//_pBuffer = new int[SIZE](); C++11;
-		memset(_pBuffer, 0, sizeof(int)*SIZE);
+	void speak() {
+		cout << "parent!" << endl;
 	}
+};
 
-	Test(int i){
-
-//		for(int i = 0; i < SIZE; i++){
-//			_pBuffer[i] = 7 * i;
-//		}
-	}
-	
-	Test(const Test &other){
-//		memcpy(_pBuffer, other._pBuffer, SIZE*sizeof(int));
-	}
-
-	Test &operator=(const Test &other){
-//		memcpy(_pBuffer, other._pBuffer, SIZE*sizeof(int));
-		return *this;
-	}
-	
-	~Test(){
-		delete [] _pBuffer;
-	}
-
-	friend std::ostream &operator<<(std::ostream &out, const Test &test);
-
-	Test(Test &&other){
-	
-		std::cout << "move constructor" << std::endl;
-		_pBuffer = other._pBuffer;
-		other._pBuffer = nullptr;
-	}
+class Brother: public Parent {
 
 };
-std::ostream &operator<<(std::ostream &out, const Test &test){
-	return out;
-}
 
-Test getTest(){
-	return Test();
-}
+class Sister: public Parent {
 
-int main(){
+};
 
-	Test test1 = getTest();
+int main() {
 
-	std::vector<Test> vec;
-	vec.push_back(Test());
+	Parent parent;
+	Brother brother;
 
+	Parent *ppb = &brother;
 
+	Brother *pbb = static_cast<Brother *>(ppb);
 
+	cout << pbb << endl;
+
+	Parent &&p = static_cast<Parent &&>(parent);
+	p.speak();
 
 	return 0;
 }
