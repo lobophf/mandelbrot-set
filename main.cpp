@@ -51,17 +51,28 @@ Test getTest(){
 	return Test();
 }
 
+void check(const Test &value){
+	std::cout << "lValue function!" << std::endl;
+}
+
+void check(Test &&value){
+	std::cout << "rValue function!" << std::endl;
+}
+
 int main(){
 
 	Test test1 = getTest();
 
 	std::vector<Test> vec;
 	vec.push_back(Test());
-	
-	Test &rTest1 = test1;
-	const Test &rTest2 = getTest();
 
-	Test test2(Test(1)); //for some reason, previously I messed up
+	Test &ltest1 = test1;
+
+	Test &&rtest1 = getTest();
+	
+	check(test1);
+	check(getTest());
+	check(Test());
 
 	return 0;
 }
