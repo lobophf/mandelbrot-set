@@ -1,35 +1,28 @@
 #include <iostream>
 
-class Parent {
-public:
-	virtual void speak() {
-		std::cout << "parent!" << std::endl;
-	}
-};
 
-class Brother: public Parent {
+class Test{
 
 };
 
-class Sister: public Parent {
+template<typename T>
+void call (T &&arg){
+	check(std::forward<T>(arg));
+}
 
-};
+void check(Test &test){
+	std::cout << "lvalue" << std::endl;
+}
+
+void check(Test &&test){
+	std::cout << "rvalue" << std::endl;
+}
 
 int main() {
 
-	Parent parent;
-	Brother brother;
-
-	Parent *ppb = &brother;
-
-	Sister *pbb = reinterpret_cast<Sister *>(ppb);
-
-	if(pbb == nullptr){
-		std::cout << "invalid cast" << std::endl;
-	}
-	else{
-		std::cout << pbb << std::endl;
-	}
+	Test test;
+	//call(Test());
+	call(Test());
 
 	return 0;
 }
