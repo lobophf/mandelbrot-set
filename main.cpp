@@ -1,28 +1,40 @@
 #include <iostream>
-#include <functional>
-
-using namespace std;
-using namespace placeholders;
+#include <memory>
 
 class Test{
 public:
-	int add(int a, int b, int c){
-		cout << a << ", " << b << ", " << c << endl;
-		return a + b + c;
+
+	Test(){
+		std::cout << "created" << std::endl;
+	}
+	
+	void greet(){
+		std::cout << "Hello" << std::endl;
+	}
+
+	~Test(){
+		std::cout << "destroyed" << std::endl;
 	}
 };
 
-int run(function<int(int, int)> func){
-	return func(7, 3);
-}
+class Temp{
+private:
+	std::unique_ptr<Test[]> pTest;
+
+public:
+	Temp(): pTest(new Test[2]){
+
+	}
+};
 
 int main(){
 
+	Temp temp;
 
-	Test test;
-	auto calculate = bind(&Test::add, test, _2, 100, _1);
-
-	cout << run(calculate) << endl;
+//	std::unique_ptr<Test[]> pTest(new Test[2]);
+//	pTest[1].greet();
+//
+//	std::cout << "Finished" << std::endl;
 
 	return 0;
 }
