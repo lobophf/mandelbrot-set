@@ -22,7 +22,7 @@ int main() {
 
 	Parent *ppb = &brother;
 
-	Brother *pbb = dynamic_cast<Brother *>(ppb);
+	Sister *pbb = reinterpret_cast<Sister *>(ppb);
 
 	if(pbb == nullptr){
 		std::cout << "invalid cast" << std::endl;
