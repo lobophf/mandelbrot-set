@@ -1,18 +1,9 @@
-//============================================================================
-// Name        : Static.cpp
-// Author      : 
-// Version     :
-// Copyright   : Your copyright notice
-// Description : Hello World in C++, Ansi-style
-//============================================================================
-
 #include <iostream>
-using namespace std;
 
 class Parent {
 public:
-	void speak() {
-		cout << "parent!" << endl;
+	virtual void speak() {
+		std::cout << "parent!" << std::endl;
 	}
 };
 
@@ -31,12 +22,14 @@ int main() {
 
 	Parent *ppb = &brother;
 
-	Brother *pbb = static_cast<Brother *>(ppb);
+	Brother *pbb = dynamic_cast<Brother *>(ppb);
 
-	cout << pbb << endl;
-
-	Parent &&p = static_cast<Parent &&>(parent);
-	p.speak();
+	if(pbb == nullptr){
+		std::cout << "invalid cast" << std::endl;
+	}
+	else{
+		std::cout << pbb << std::endl;
+	}
 
 	return 0;
 }
