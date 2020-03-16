@@ -1,6 +1,6 @@
 #include "bitmap.h"
 
-bmp::Bitmap::Bitmap(int width, int height): _width(width), _height(height){
+bmp::Bitmap::Bitmap(int width, int height): _width(width), _height(height), _pPixels(new uint8_t[width * height * 3]){
 
 }
 
