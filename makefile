@@ -1,13 +1,16 @@
 header_and_cpp_dir=includes
 objects_dir=objects
 
-compile: create_dir bitmapFileHeader main clean
+compile: create_dir bitmapFileHeader bitmapInfoHeader main clean
 	g++ $(objects_dir)/main.o -o main.out
 
 bitmapFileHeader: $(header_and_cpp_dir)/bitmapFileHeader.h
 	g++ -std=c++11 -c $(header_and_cpp_dir)/bitmapFileHeader.h -o $(objects_dir)/bitmapFileHeader.o
 
-main:	$(header_and_cpp_dir)/bitmapFileHeader.h
+bitmapInfoHeader: $(header_and_cpp_dir)/bitmapInfoHeader.h
+	g++ -std=c++11 -c $(header_and_cpp_dir)/bitmapInfoHeader.h -o $(objects_dir)/bitmapInfoHeader.o
+
+main:	$(header_and_cpp_dir)/bitmapFileHeader.h $(header_and_cpp_dir)/bitmapInfoHeader.h
 	g++ -c -std=c++11 main.cpp -o $(objects_dir)/main.o
 
 create_dir:
