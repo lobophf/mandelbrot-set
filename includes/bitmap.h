@@ -1,8 +1,11 @@
 #ifndef BITMAP_H_
 #define BITMAP_H_
-#include<string>
-#include<cstdint>
-#include<memory>
+#include <string>
+#include <cstdint>
+#include <fstream>
+#include <memory>
+#include "bitmapInfoHeader.h"
+#include "bitmapFileHeader.h"
 
 namespace bmp{
 class Bitmap{
