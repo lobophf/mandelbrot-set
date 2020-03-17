@@ -1,25 +1,33 @@
-#include "includes/bitmap.h"
-#include "includes/mandelbrot.h"
-#include <iostream>
-#include <cstdint>
-#include <memory>
-#include <math.h>
+	#include "includes/bitmap.h"
+	#include "includes/mandelbrot.h"
+	#include "includes/zoomList.h"
+	#include "includes/zoom.h"
+	#include <iostream>
+	#include <cstdint>
+	#include <memory>
+	#include <math.h>
 
-int main(){
+	int main(){
 
-	int const WIDTH = 800;
-	int const HEIGHT = 600;
+		int const WIDTH = 1800;
+		int const HEIGHT = 1200;
 
-	bmp::Bitmap bm(WIDTH, HEIGHT);
+		bmp::Bitmap bm(WIDTH, HEIGHT);
 
-	std::unique_ptr<int[]> histogram(new int[Mandelbrot::MAX_ITERATIONS]{0});
+		ZoomList z(WIDTH, HEIGHT);
+		z.add(Zoom(WIDTH / 2, HEIGHT / 2, 4.0 / WIDTH));
+		z.add(Zoom(521, HEIGHT - 499, 0.1));
+		z.add(Zoom(164, HEIGHT - 222, 0.1));
+		z.add(Zoom(882, HEIGHT - 483, 0.05));
+
+		std::unique_ptr<int[]> histogram(new int[Mandelbrot::MAX_ITERATIONS]{0});
 	std::unique_ptr<int[]> fractal(new int[WIDTH * HEIGHT]{0});
-
+	
 	for(int y = 0; y < HEIGHT; y++){
 		for(int x = 0; x < WIDTH; x++){
-			double xFractal = (x - WIDTH / 2.0 - 200) * 2.0 / HEIGHT;
-			double yFractal = (y - HEIGHT / 2.0) * 2.0 / HEIGHT;
-			int iterations = Mandelbrot::getIterations(xFractal, yFractal);
+
+			std::pair<double, double> coordenates = z.doZoom(x, y);
+			int iterations = Mandelbrot::getIterations(coordenates.first, coordenates.second);
 			fractal[y * WIDTH + x] = iterations;
 			if(iterations != Mandelbrot::MAX_ITERATIONS){
 				histogram[iterations]++;
