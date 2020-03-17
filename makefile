@@ -1,5 +1,6 @@
 header_and_cpp_dir=includes
 objects_dir=objects
+outputs_dir=outputs
 
 compile: create_dir bitmapFileHeader bitmapInfoHeader bitmap main clean
 	g++ $(objects_dir)/main.o $(objects_dir)/bitmap.o -o main.out
@@ -18,6 +19,7 @@ main:
 
 create_dir:
 	mkdir -p $(objects_dir) 
+	mkdir -p $(outputs_dir) 
 
 run:
 	./main.out

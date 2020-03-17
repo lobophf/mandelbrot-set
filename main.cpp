@@ -8,7 +8,7 @@ int main(){
 
 	bmp::Bitmap bm(width, height);
 	bm.setPixel(width / 2, height / 2, 255, 255, 255);
-	bm.write("test.bmp");
+	bm.write("outputs/test.bmp");
 
 	std::cout << "Finished." << std::endl;
 
