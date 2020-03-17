@@ -19,10 +19,12 @@ int main(){
 			double yFractal = (y - height/ 2.0) * 2.0 / height;
 			
 			int iterations = Mandelbrot::getIterations(xFractal, yFractal);
-			uint8_t blue = (uint8_t)(256 * (double)iterations/Mandelbrot::MAX_ITERATIONS);
+			uint8_t red = (uint8_t)(256 * (double)iterations/Mandelbrot::MAX_ITERATIONS);
 			
-			if(blue < min) min = blue;
-			if(blue > max) max = blue;
+			bm.setPixel(x, y, red, 0, 0);
+
+			if(red < min) min = red;
+			if(red > max) max = red;
 		}
 	}
 
