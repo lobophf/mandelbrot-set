@@ -5,18 +5,18 @@
 
 int main(){
 
-	int const width = 800;
-	int const height = 600;
+	int const WIDTH = 800;
+	int const HEIGHT = 600;
 
-	bmp::Bitmap bm(width, height);
+	bmp::Bitmap bm(WIDTH, HEIGHT);
 
 	double min = 9999999;
 	double max = -9999999;
 
-	for(int y = 0; y < height; y++){
-		for(int x = 0; x < width; x++){
-			double xFractal = (x - width / 2.0) * 2.0 / width;
-			double yFractal = (y - height/ 2.0) * 2.0 / height;
+	for(int y = 0; y < HEIGHT; y++){
+		for(int x = 0; x < WIDTH; x++){
+			double xFractal = (x - WIDTH / 2.0) * 2.0 / WIDTH;
+			double yFractal = (y - HEIGHT / 2.0) * 2.0 / HEIGHT;
 			
 			int iterations = Mandelbrot::getIterations(xFractal, yFractal);
 			uint8_t red = (uint8_t)(256 * (double)iterations/Mandelbrot::MAX_ITERATIONS);
