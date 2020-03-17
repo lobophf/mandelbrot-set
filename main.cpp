@@ -1,5 +1,7 @@
 #include "includes/bitmap.h"
+#include "includes/mandelbrot.h"
 #include <iostream>
+#include <cstdint>
 
 int main(){
 
@@ -15,17 +17,18 @@ int main(){
 		for(int x = 0; x < width; x++){
 			double xFractal = (x - width / 2.0) * 2.0 / width;
 			double yFractal = (y - height/ 2.0) * 2.0 / height;
-
-			if(xFractal < min) min = xFractal;
-			if(xFractal > max) max = xFractal;
+			
+			int iterations = Mandelbrot::getIterations(xFractal, yFractal);
+			uint8_t blue = (uint8_t)(256 * (double)iterations/Mandelbrot::MAX_ITERATIONS);
+			
+			if(blue < min) min = blue;
+			if(blue > max) max = blue;
 		}
 	}
 
 	std::cout << min << ", " << max << std::endl;
 
-	bm.setPixel(width / 2, height / 2, 255, 255, 255);
 	bm.write("outputs/test.bmp");
-
 	std::cout << "Finished." << std::endl;
 
 	return 0;
