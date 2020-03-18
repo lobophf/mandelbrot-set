@@ -1,8 +1,6 @@
 #ifndef ZOOM_H_
 #define ZOOM_H_
 
-#include <iostream>
-
 struct Zoom{
 	int x{0};
 	int y{0};
