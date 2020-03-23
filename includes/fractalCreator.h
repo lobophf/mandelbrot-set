@@ -21,7 +21,6 @@ private:
 	ZoomList _zoomList;
 
 private:
-	void addZoom(const Zoom& zoom);
 	void writeBitmap(std::string fileName);
 	void calculateIterations();
 	void drawFractal();
@@ -29,6 +28,7 @@ private:
 
 public:
 	FractalCreator(int width, int height);
+	void addZoom(const Zoom& zoom);
 	void run(std::string fileName);
 };
 

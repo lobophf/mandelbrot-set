@@ -13,10 +13,6 @@ FractalCreator::FractalCreator(int width, int height): _width(width),
 
 void FractalCreator::run(std::string fileName){
 
-	addZoom(Zoom(521, _height - 499, 0.1));
-	addZoom(Zoom(164, _height - 222, 0.1));
-	addZoom(Zoom(882, _height - 483, 0.05));
-
 	calculateIterations();
 	calculateTotalIterations();
 	drawFractal();
