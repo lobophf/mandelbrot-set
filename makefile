@@ -2,9 +2,10 @@ header_and_cpp_dir=includes
 objects_dir=objects
 outputs_dir=outputs
 
-compile: create_dir fractalCreator main clean
+compile: create_dir fractalCreator main RBG clean
 	g++ $(objects_dir)/main.o $(objects_dir)/bitmap.o $(objects_dir)/mandelbrot.o \
-	$(objects_dir)/zoomList.o $(objects_dir)/fractalCreator.o -o main.out
+	$(objects_dir)/zoomList.o $(objects_dir)/fractalCreator.o $(objects_dir)/rgb.o \
+	-o main.out
 
 zoom:
 	g++ -std=c++11 -c $(header_and_cpp_dir)/zoom.h -o $(objects_dir)/zoom.o
@@ -30,6 +31,9 @@ main:
 fractalCreator: bitmapFileHeader bitmapInfoHeader bitmap mandelbrot zoomList \
 	$(header_and_cpp_dir)/fractalCreator.h
 	g++ -c -std=c++11 $(header_and_cpp_dir)/fractalCreator.cpp -o $(objects_dir)/fractalCreator.o
+
+RBG: $(header_and_cpp_dir)/rgb.h
+	g++ -std=c++11 -c $(header_and_cpp_dir)/rgb.cpp -o $(objects_dir)/rgb.o
 
 create_dir:
 	mkdir -p $(objects_dir) 

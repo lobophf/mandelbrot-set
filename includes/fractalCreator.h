@@ -5,6 +5,7 @@
 #include "mandelbrot.h"
 #include "zoomList.h"
 #include "zoom.h"
+#include "rgb.h"
 #include <cstdint>
 #include <memory>
 #include <math.h>

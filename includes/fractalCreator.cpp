@@ -32,6 +32,11 @@ void FractalCreator::writeBitmap(std::string fileName){
 }
 
 void FractalCreator::drawFractal(){
+
+	RGB startColor(0, 0, 0);
+	RGB endColor(0, 255, 0);
+	RGB colorDiff = endColor - startColor;
+
 	for(int y = 0; y < _height; y++){
 		for(int x = 0; x < _width; x++){
 
@@ -46,7 +51,10 @@ void FractalCreator::drawFractal(){
 			}
 		
 			if(iterations != Mandelbrot::MAX_ITERATIONS){
-				green = pow(255, hue);
+
+				red = pow(startColor.r + colorDiff.r, hue);
+				green = pow(startColor.g + colorDiff.g, hue);
+				blue = pow(startColor.b + colorDiff.b, hue);
 			}
 
 			_bitmap.setPixel(x, y, red, green, blue);
