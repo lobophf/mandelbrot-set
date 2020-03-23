@@ -18,15 +18,17 @@ private:
 	std::unique_ptr<int[]> _histogram;
 	std::unique_ptr<int[]> _fractal;
 	ZoomList _zoomList;
-	
 
-public:
-	FractalCreator(int width, int height);
+private:
 	void addZoom(const Zoom& zoom);
 	void writeBitmap(std::string fileName);
 	void calculateIterations();
 	void drawFractal();
 	void calculateTotalIterations();
+
+public:
+	FractalCreator(int width, int height);
+	void run(std::string fileName);
 };
 
 #endif
