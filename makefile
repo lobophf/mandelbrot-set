@@ -2,7 +2,7 @@ header_and_cpp_dir=includes
 objects_dir=objects
 outputs_dir=outputs
 
-compile: create_dir bitmapFileHeader bitmapInfoHeader bitmap mandelbrot zoomList fractalCreator main clean
+compile: create_dir fractalCreator main clean
 	g++ $(objects_dir)/main.o $(objects_dir)/bitmap.o $(objects_dir)/mandelbrot.o \
 	$(objects_dir)/zoomList.o $(objects_dir)/fractalCreator.o -o main.out
 
@@ -27,7 +27,8 @@ mandelbrot: $(header_and_cpp_dir)/mandelbrot.h
 main:
 	g++ -c -std=c++11 main.cpp -o $(objects_dir)/main.o 
 
-fractalCreator: $(header_and_cpp_dir)/fractalCreator.h
+fractalCreator: bitmapFileHeader bitmapInfoHeader bitmap mandelbrot zoomList \
+	$(header_and_cpp_dir)/fractalCreator.h
 	g++ -c -std=c++11 $(header_and_cpp_dir)/fractalCreator.cpp -o $(objects_dir)/fractalCreator.o
 
 create_dir:
