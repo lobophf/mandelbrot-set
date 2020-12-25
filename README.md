@@ -10,7 +10,7 @@ To draw the Mandelbroat, first clone this repository.
 $ git clone git@github.com:lobophf/mandelbrotSet.git
 ```
 
-Then compile the code this project using the GNU make:
+Then compile this project using the GNU make:
 
 ```sh
 $ make
