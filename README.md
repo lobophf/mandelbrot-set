@@ -12,7 +12,8 @@ This program draws the Mandelbrot set and writes it out as a Bitmap (BMP) file. 
 To draw the Mandelbroat, first clone this repository and jump into the `mandelbroatSet`folder.
 
 ```sh
-$ git clone git@github.com:lobophf/mandelbrotSet.git && cd mandelbrotSet
+$ git clone git@github.com:lobophf/mandelbrotSet.git 
+$ cd mandelbrotSet
 ```
 
 Then compile this project using the GNU make:
