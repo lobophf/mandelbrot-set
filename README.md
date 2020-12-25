@@ -1,6 +1,6 @@
 <p align="center">
-  <img height="210px" alt="screenshot" src="https://dl.dropboxusercontent.com/s/86zpogykuljeds9/test.bmp?dl=0">
-  <img height="210px" alt="screenshot" src="https://dl.dropboxusercontent.com/s/4v1usq5w8732sx3/test1.bmp?dl=0">
+  <img height="180px" alt="screenshot" src="https://dl.dropboxusercontent.com/s/86zpogykuljeds9/test.bmp?dl=0">
+  <img height="180px" alt="screenshot" src="https://dl.dropboxusercontent.com/s/4v1usq5w8732sx3/test1.bmp?dl=0">
 </p>
 
 ## About:
