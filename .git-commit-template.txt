@@ -1,0 +1,37 @@
+# <type>: (If applied, this commit will...) <subject> (Max 50 char)
+# |<---- Using a Maximum Of 50 Characters ---->|
+# ex: feat: Add the contact page to the website
+
+# Explain why this change is being made
+# |<----   Try To Limit Each Line to a Maximum Of 72 Characters   ---->|
+
+# ex: Customers need to know where we are. This page includes a map to 
+#our locations (with address), our phone and faz numbers, and links to 
+#our social media networks.
+
+# Relevant documentation
+# ex: http://www.somewebsite.com
+
+# Is this related to issues/ tickets?
+# ex: Closes #37
+
+# --- COMMIT END ---
+# Type can be 
+#    feat     (new feature)
+#    fix      (bug fix)
+#    refac    (refactoring)
+#    style    (formatting, missing semi colons, etc; no code change)
+#    docs     (changes to documentation)
+#    test     (adding or refactoring tests; no production code change)
+#    chore    (updating grunt tasks etc; no production code change)
+# --------------------
+# Remember to
+#    Capitalize the subject line
+#    Use the imperative mood in the subject line
+#    Do not end the subject line with a period
+#    Separate subject from body with a blank line
+#    Use the body to explain what and why vs. how
+#    Can use multiple lines with "-" for bullet points in body
+# --------------------
+# The template was forked and modified from the link below.
+# https://gist.github.com/adeekshith/cd4c95a064977cdc6c50
