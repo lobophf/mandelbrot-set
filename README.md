@@ -14,9 +14,13 @@
   <p>
 
 ## :question: About:
-This program draws the Mandelbrot set and writes it out as a Bitmap (BMP) file. To know more about the Mandelbrot Set please see [this](https://en.wikipedia.org/wiki/Mandelbrot_set) page.
+This program draws the Mandelbrot set and writes it out as a Bitmap (BMP) file. To know more about the 
+Mandelbrot Set please see [this](https://en.wikipedia.org/wiki/Mandelbrot_set) page.
 
 ## :hammer_and_wrench: Installation:
+Keep in mind that in the future, I will provide more details for using this program. For now, you can 
+try the following steps:
+
 To draw the Mandelbroat, first clone this repository and jump into the `mandelbroatSet`folder.
 
 ```sh
