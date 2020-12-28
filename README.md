@@ -4,14 +4,14 @@
   <img height="180px" alt="screenshot" src="https://dl.dropboxusercontent.com/s/86zpogykuljeds9/test.bmp?dl=0">
   <img height="180px" alt="screenshot" src="https://dl.dropboxusercontent.com/s/4v1usq5w8732sx3/test1.bmp?dl=0">
   <br>
-  <a href="#question-about">About</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-	<a href="#hammer_and_wrench-installation">Installation</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-	<a href="#balance_scale-license">License</a>	
-  <br>
   <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/lobophf/mandelbrotSet">	
   <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/lobophf/mandelbrotSet">
   <img alt="License" src="https://img.shields.io/badge/license-MIT-brightgreen"> 
-<p>
+  <br>
+  <a href="#question-about">About</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+	<a href="#hammer_and_wrench-installation">Installation</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+	<a href="#balance_scale-license">License</a>	
+  <p>
 
 ## :question: About:
 This program draws the Mandelbrot set and writes it out as a Bitmap (BMP) file. To know more about the Mandelbrot Set please see [this](https://en.wikipedia.org/wiki/Mandelbrot_set) page.
