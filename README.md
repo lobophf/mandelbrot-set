@@ -35,4 +35,4 @@ And then, run this. A Bitmap file will be created in the `outputs` folder.
 $ make run
 ```
 ## :balance_scale: License
-This application is a MIT licensed, as found in the [LICENSE](https://github.com/lobophf/happy/blob/master/LICENSE) file.
+This application is a MIT licensed, as found in the [LICENSE](./LICENSE) file.
