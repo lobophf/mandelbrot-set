@@ -32,7 +32,7 @@ this library in your project. Once you've done it, just type:
 ```sh
 $ make
 ```
-Now, just run the program and the image file will be placed wherever you have 
+If you run the program and the image file will be placed wherever you have 
 set it. See the `main.cpp` file for reference.
 
 ## :gear: Using:
