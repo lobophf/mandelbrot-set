@@ -67,8 +67,8 @@ frac.addRange(0.8, RGB( 72,   0, 255));
 frac.addRange(1.0, RGB(  0,   0, 255));
 ```
 
-Then, you must use the *Zoom* struct combined with the *addZoom* method 
-to navigate in the complex plane. The first two arguments of the *Zoom* struct are 
+Then, you must use the *Zoom* structure combined with the *addZoom* method to 
+navigate over the bitmap image. The first two arguments of the *Zoom* struct are 
 the pixel coordinates. By default, the start position is centered at the origin 
 of the [complex plane](https://en.wikipedia.org/wiki/Complex_plane). The third 
 argument is a number that represents the zoom. The lower its value, the deeper we 
