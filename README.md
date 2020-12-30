@@ -16,7 +16,9 @@
 
 ## :question: About:
 This library draws the Mandelbrot set and writes it out as a bitmap (BMP) file. To know more about this
-subject, please see [this](https://en.wikipedia.org/wiki/Mandelbrot_set) page.
+subject, please see [this](https://en.wikipedia.org/wiki/Mandelbrot_set) page. You can do as I did and 
+get additional information by checking [John's](https://twitter.com/caveofjohn?lang=en) course on 
+[Udemy](https://www.udemy.com/course/learn-advanced-c-programming/).
 
 ## :hammer_and_wrench: Installation:
 First, clone this repository and jump into the `mandelbrotSet` folder.
