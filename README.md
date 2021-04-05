@@ -21,11 +21,11 @@ get additional information by checking [John's](https://twitter.com/caveofjohn?l
 [Udemy](https://www.udemy.com/course/learn-advanced-c-programming/).
 
 ## :hammer_and_wrench: Installation:
-First, clone this repository and jump into the `mandelbrotSet` folder.
+First, clone this repository and jump into the `mandelbrot-set` folder.
 
 ```sh
-$ git clone git@github.com:lobophf/mandelbrotSet.git 
-$ cd mandelbrotSet
+$ git clone git@github.com:lobophf/mandelbrot-set.git 
+$ cd mandelbrot-set
 ```
 
 You can easily modify the `Makefile` available in this repository, to include 
