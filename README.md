@@ -1,8 +1,8 @@
 <h1 align="center"> Mandelbrot set </h1>
 
 <p align="center">
-  <img height="180px" alt="screenshot" src="https://dl.dropboxusercontent.com/s/86zpogykuljeds9/test.bmp?dl=0">
-  <img height="180px" alt="screenshot" src="https://dl.dropboxusercontent.com/s/4v1usq5w8732sx3/test1.bmp?dl=0">
+  <img height="180px" alt="screenshot" src="https://dl.dropboxusercontent.com/s/g3i2o08odw4lvay/fractal1.jpg?dl=0">
+  <img height="180px" alt="screenshot" src="https://dl.dropboxusercontent.com/s/atnz4s4u8ryy0o0/fractal2.jpg?dl=0">
   <br>
   <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/lobophf/mandelbrotSet">	
   <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/lobophf/mandelbrotSet">
