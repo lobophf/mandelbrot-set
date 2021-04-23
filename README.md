@@ -8,9 +8,9 @@
   <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/lobophf/mandelbrotSet">
   <img alt="License" src="https://img.shields.io/badge/license-MIT-brightgreen"> 
   <br>
-  <a href="#question-about">About</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#hammer_and_wrench-installation">Installation</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#gear-using">Using</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#question-about">About</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;
+  <a href="#hammer_and_wrench-installation">Installation</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;
+  <a href="#gear-using">Using</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;
   <a href="#balance_scale-license">License</a>	
 <p>
 
